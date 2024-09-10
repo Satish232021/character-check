@@ -10,7 +10,7 @@ local();
 function local() {
     content.addEventListener('input', () => {
         total.innerText = content.value.length;
-        remaining.innerText = 100 - content.value.length;
+        remaining.innerText = content.getAttribute('maxlength') - content.value.length;
         if ( remaining.innerText <= 8 ){
             remaining.style.color = 'red';
         }else if( remaining.innerText <= 15 && remaining.innerText > 8){
